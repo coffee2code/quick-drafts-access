@@ -1,11 +1,11 @@
 === Quick Drafts Access ===
 Contributors: coffee2code
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522
-Tags: draft, drafts, admin, menu, post, page, post_type, shortcut, coffee2code
+Tags: draft, drafts, admin, menu, multiuser, post, page, post_type, shortcut, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.1
-Tested up to: 4.0.1
+Tested up to: 4.1
 Stable tag: 2.0
 
 Adds links to 'All Drafts' and 'My Drafts' under the Posts, Pages, and other custom post type sections in the admin menu.
@@ -71,16 +71,23 @@ Arguments:
 Example:
 
 `
-add_filter( 'c2c_quick_drafts_access_post_types', 'my_qda_mods' );
+/**
+ * Prevents the drafts menu link(s) from being displayed for the 'event' post type.
+ *
+ * @param array  $post_types The post types that will show drafts menu links by default.
+ * @return array
+ */
 function my_qda_mods( $post_types ) {
     $acceptable_post_types = array();
     foreach ( (array) $post_types as $post_type ) {
         // Don't show the Drafts link for 'event' post type
-        if ( ! in_array( $post_type->name, array( 'event' ) ) ) // More post types can be added to this array
+        if ( ! in_array( $post_type->name, array( 'event' ) ) ) {// More post types can be added to this array
             $acceptable_post_types[] = $post_type;
+        }
     }
     return $acceptable_post_types;
 }
+add_filter( 'c2c_quick_drafts_access_post_types', 'my_qda_mods' );
 `
 
 = c2c_quick_drafts_access_show_all_drafts_menu_link =
@@ -136,7 +143,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 
 == Changelog ==
 
-= 2.0 (2014-11-24) =
+= 2.0 (2015-02-23) =
 * Change 'Drafts' menu link text to 'All Drafts'
 * Add 'My Drafts' menu link that links directly to current user's drafts
 * Add filter 'c2c_quick_drafts_access_show_all_drafts_menu_link'
@@ -145,6 +152,8 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 * Build query args via add_query_args() rather than as a string
 * Skip handling a post type if it doesn't look like a post type object
 * Cast result of 'c2c_quick_drafts_access_post_types' filter as array
+* Remove is_admin() check that prevented class use outside of admin
+* Add meager unit tests
 * Add full localization support
 * Add version() to return version number of the plugin
 * Explicitly declare functions public and static
@@ -152,10 +161,13 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 * Add full inline code documentation
 * Reformat plugin header
 * Add 'Domain Path' directive to top of main plugin file
-* Note compatibility through WP 4.0+
+* Note compatibility through WP 4.1+
+* Update copyright date (2015)
 * Minor code reformatting (bracing, spacing)
 * Change documentation links to wp.org to be https
+* Update banner and screenshot images
 * Add plugin icon
+* Regenerate .pot
 
 = 1.1.4 (2013-12-19) =
 * Minor documentation tweaks
@@ -205,7 +217,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 == Upgrade Notice ==
 
 = 2.0 =
-Substantial update: now there are 'All Drafts' and 'My Drafts' menu links; noted compatibility through WP 4.0+
+Substantial update: now there is the potential for 'All Drafts' and/or 'My Drafts' menu links; added localization support; noted compatibility through WP 4.1+; more
 
 = 1.1.4 =
 Trivial update: noted compatibility through WP 3.8+

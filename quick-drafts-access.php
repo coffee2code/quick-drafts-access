@@ -11,23 +11,24 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Description: Adds a link to Drafts under the Posts, Pages, and other custom post type sections in the admin menu.
  *
- * Compatible with WordPress 3.1 through 4.0+.
+ * Compatible with WordPress 3.1 through 4.1+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.
  * =>> Or visit: https://wordpress.org/plugins/quick-drafts-access/
  *
  * TODO:
- *   * Add screen option checkboxes to control if menu links should appear?
- *   * Cache user draft count; clear count when a post transitions to/from draft
+ * - Add screen option checkboxes to control if menu links should appear?
+ * - Cache user draft count; clear count when a post transitions to/from draft
+ * - More unit tests
  *
  * @package Quick_Drafts_Access
- * @author Scott Reilly
+ * @author  Scott Reilly
  * @version 2.0
  */
 
 /*
-	Copyright (c) 2010-2014 by Scott Reilly (aka coffee2code)
+	Copyright (c) 2010-2015 by Scott Reilly (aka coffee2code)
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -46,7 +47,7 @@
 
 defined( 'ABSPATH' ) or die();
 
-if ( is_admin() && ! class_exists( 'c2c_QuickDraftsAccess' ) ) :
+if ( ! class_exists( 'c2c_QuickDraftsAccess' ) ) :
 
 class c2c_QuickDraftsAccess {
 
