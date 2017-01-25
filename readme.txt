@@ -145,6 +145,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 
 = () =
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
+* Change: Enable more error output for unit tests.
 
 = 2.0.2 (2015-12-17) =
 * Change: Add support for language packs:
