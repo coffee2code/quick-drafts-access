@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Quick Drafts Access
- * Version:     2.0.2
+ * Version:     2.1
  * Plugin URI:  http://coffee2code.com/wp-plugins/quick-drafts-access/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
@@ -19,12 +19,11 @@
  *
  * @package Quick_Drafts_Access
  * @author  Scott Reilly
- * @version 2.0.2
+ * @version 2.1
  */
 
 /*
  * TODO:
- * - Add screen option checkboxes to control if menu links should appear?
  * - Cache user draft count; clear count when a post transitions to/from draft
  * - More unit tests
  */
@@ -61,7 +60,7 @@ class c2c_QuickDraftsAccess {
 	 * @return string
 	 */
 	public static function version() {
-		return '2.0.2';
+		return '2.1';
 	}
 
 	/**

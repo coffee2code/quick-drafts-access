@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 2.0.2
+Stable tag: 2.1
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
@@ -143,11 +143,11 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 
 == Changelog ==
 
-= () =
+= 2.1 (2017-01-24) =
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
 * Change: Enable more error output for unit tests.
 * Change: Note compatibility through WP 4.7+.
-* Change: Remove support for WordPress older than 4.6 (should still work for earlier versions)
+* Change: Remove support for WordPress older than 4.6 (should still work for earlier versions going back to WP 3.1)
 * Change: Minor readme.txt improvements.
 * Change: Update copyright date (2017).
 
@@ -237,6 +237,9 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 
 
 == Upgrade Notice ==
+
+= 2.1 =
+Minor update: noted compatibility through WP 4.7+, dropped compatibility with versions of WP older than 4.6, and updated copyright date
 
 = 2.0.2 =
 Trivial update: adjustments to utilize language packs, minor unit test tweaks, noted compatibility through WP 4.4+, and updated copyright date
