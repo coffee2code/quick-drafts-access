@@ -8,7 +8,7 @@ Requires at least: 4.6
 Tested up to: 4.7
 Stable tag: 2.0.2
 
-Adds links to 'All Drafts' and 'My Drafts' under the Posts, Pages, and other custom post type sections in the admin menu.
+Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
 
 == Description ==
@@ -30,7 +30,7 @@ Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/quick-drafts-access/)
 
 == Installation ==
 
-1. Unzip `quick-drafts-access.zip` inside the `/wp-content/plugins/` directory (or install via the built-in WordPress plugin installer)
+1. Install via the built-in WordPress plugin installer. Or download and unzip `quick-drafts-access.zip` inside the plugins directory for your site (typically `wp-content/plugins/`)
 1. Activate the plugin through the 'Plugins' admin menu in WordPress
 
 
@@ -58,7 +58,7 @@ Yes, which is why the plugin hides the "All Drafts" link when the "My Drafts" li
 
 == Filters ==
 
-The plugin is further customizable via four filters. Typically, these customizations would be put into your active theme's functions.php file, or used by another plugin.
+The plugin is further customizable via four filters. Such code should ideally be put into a mu-plugin or site-specific plugin (which is beyond the scope of this readme to explain).
 
 = c2c_quick_drafts_access_post_types =
 
@@ -148,6 +148,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 * Change: Enable more error output for unit tests.
 * Change: Note compatibility through WP 4.7+.
 * Change: Remove support for WordPress older than 4.6 (should still work for earlier versions)
+* Change: Minor readme.txt improvements.
 * Change: Update copyright date (2017).
 
 = 2.0.2 (2015-12-17) =
