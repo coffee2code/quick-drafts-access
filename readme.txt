@@ -145,6 +145,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 
 = () =
 * Change: Add GitHub link to readme
+* Change: Unit tests: Minor whitespace tweaks to bootstrap
 * Change: Note compatibility through WP 4.9+
 * Change: Update copyright date (2018)
 
