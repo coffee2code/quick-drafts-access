@@ -25,7 +25,7 @@ Also, the draft link(s) only appear for users who have the capability to edit po
 
 The plugin hides the two types of draft links when no related drafts for that post type are present. See the Filters section for how to override this behavior. Filters are also provided to disable the plugin from ever showing the "All Drafts" or the "My Drafts" links.
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/quick-drafts-access/) |  [Plugin Directory Page](https://wordpress.org/plugins/quick-drafts-access/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/quick-drafts-access/) | [Plugin Directory Page](https://wordpress.org/plugins/quick-drafts-access/) | [GitHub](https://github.com/coffee2code/quick-drafts-access/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -144,6 +144,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 == Changelog ==
 
 = () =
+* Change: Add GitHub link to readme
 * Change: Note compatibility through WP 4.9+
 * Change: Update copyright date (2018)
 
