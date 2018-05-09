@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 4.9
-Stable tag: 2.1
+Stable tag: 2.1.1
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
@@ -143,7 +143,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 
 == Changelog ==
 
-= () =
+= 2.1.1 (2018-05-08) =
 * Change: Cast result of various filters as boolean values
 * New: Add README.md
 * Change: Add GitHub link to readme
@@ -246,6 +246,9 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 
 
 == Upgrade Notice ==
+
+= 2.1.1 =
+Trivial update: ensured filtered values are booleans, added README.md, noted compatibility through WP 4.9+, and updated copyright date (2018)
 
 = 2.1 =
 Minor update: noted compatibility through WP 4.7+, dropped compatibility with versions of WP older than 4.6, and updated copyright date
