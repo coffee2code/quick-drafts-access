@@ -60,7 +60,7 @@ Yes, which is why the plugin hides the "All Drafts" link when the "My Drafts" li
 
 The plugin is further customizable via four filters. Such code should ideally be put into a mu-plugin or site-specific plugin (which is beyond the scope of this readme to explain).
 
-= c2c_quick_drafts_access_post_types =
+**c2c_quick_drafts_access_post_types**
 
 The 'c2c_quick_drafts_access_post_types' filter allows you to customize the list of post_types for which the draft links will be shown. By default, draft links will be shown for all public post types, which includes the default post types of 'post' and 'page'. If other post types have been added to your site, they will also automatically be taken into consideration. If you want to explicitly add or remove particular post types, use this filter.
 
@@ -90,7 +90,7 @@ function my_qda_mods( $post_types ) {
 add_filter( 'c2c_quick_drafts_access_post_types', 'my_qda_mods' );
 `
 
-= c2c_quick_drafts_access_show_all_drafts_menu_link =
+**c2c_quick_drafts_access_show_all_drafts_menu_link**
 
 The 'c2c_quick_drafts_access_show_all_drafts_menu_link' filter allows you to customize whether the 'All Drafts' link will appear at all for a post type. If true, then the 'c2c_quick_drafts_access_show_if_empty' filter would ultimately determine if the link should appear based on the presence of actual drafts.
 
@@ -106,7 +106,7 @@ Example:
 add_filter( 'c2c_quick_drafts_access_show_all_drafts_menu_link', '__return_false' );
 `
 
-= c2c_quick_drafts_access_show_my_drafts_menu_link =
+**c2c_quick_drafts_access_show_my_drafts_menu_link**
 
 The 'c2c_quick_drafts_access_show_my_drafts_menu_link' filter allows you to customize whether the 'My Drafts' link will appear at all for a post type. If true, then the 'c2c_quick_drafts_access_show_if_empty' filter would ultimately determine if the link should appear based on the presence of actual drafts.
 
@@ -122,7 +122,7 @@ Example:
 add_filter( 'c2c_quick_drafts_access_show_my_drafts_menu_link', '__return_false' );
 `
 
-= c2c_quick_drafts_access_show_if_empty =
+**c2c_quick_drafts_access_show_if_empty**
 
 The 'c2c_quick_drafts_access_show_if_empty' filter allows you to customize whether the 'All Drafts' and/or 'My Drafts' links will appear for a post type _when that post type currently has no drafts_.
 
@@ -148,6 +148,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 * New: Add README.md
 * Change: Add GitHub link to readme
 * Change: Unit tests: Minor whitespace tweaks to bootstrap
+* Change: Modify formatting of hook names in readme to prevent being uppercased when shown in the Plugin Directory
 * Change: Note compatibility through WP 4.9+
 * Change: Update copyright date (2018)
 
