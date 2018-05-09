@@ -144,6 +144,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 == Changelog ==
 
 = () =
+* Change: Cast result of various filters as boolean values
 * New: Add README.md
 * Change: Add GitHub link to readme
 * Change: Unit tests: Minor whitespace tweaks to bootstrap

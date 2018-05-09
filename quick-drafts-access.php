@@ -135,8 +135,8 @@ class c2c_QuickDraftsAccess {
 			}
 
 			// Permit override of default view state for draft links.
-			$show_all_drafts = apply_filters( 'c2c_quick_drafts_access_show_all_drafts_menu_link', true, $post_type );
-			$show_my_drafts  = apply_filters( 'c2c_quick_drafts_access_show_my_drafts_menu_link',  true, $post_type );
+			$show_all_drafts = (bool) apply_filters( 'c2c_quick_drafts_access_show_all_drafts_menu_link', true, $post_type );
+			$show_my_drafts  = (bool) apply_filters( 'c2c_quick_drafts_access_show_my_drafts_menu_link',  true, $post_type );
 
 			// Count of all drafts the user has for this post type.
 			if ( $show_my_drafts ) {
@@ -161,7 +161,7 @@ class c2c_QuickDraftsAccess {
 				$num_all_drafts = (int) wp_count_posts( $name, 'readable' )->draft;
 
 				// Show the 'All Drafts' link if there are drafts, or if forced to do so via filter.
-				if ( ( $num_all_drafts > 0 ) || apply_filters( 'c2c_quick_drafts_access_show_if_empty', false, $name, $post_type, 'all' ) ) {
+				if ( ( $num_all_drafts > 0 ) || (bool) apply_filters( 'c2c_quick_drafts_access_show_if_empty', false, $name, $post_type, 'all' ) ) {
 
 					// Show the menu link unless 'My Drafts' is also being shown AND the user is responsible for all drafts
 					if ( ! ( $show_my_drafts && $num_all_drafts === $num_my_drafts ) ) {
@@ -198,7 +198,7 @@ class c2c_QuickDraftsAccess {
 				$query_vars['author'] = get_current_user_id();
 
 				// Show the 'My Drafts' link if there are drafts, or if forced to do so via filter.
-				if ( ( $num_my_drafts > 0 ) || apply_filters( 'c2c_quick_drafts_access_show_if_empty', false, $name, $post_type, 'my' ) ) {
+				if ( ( $num_my_drafts > 0 ) || (bool) apply_filters( 'c2c_quick_drafts_access_show_if_empty', false, $name, $post_type, 'my' ) ) {
 
 					// Link label.
 					if ( 0 === $num_my_drafts ) {
