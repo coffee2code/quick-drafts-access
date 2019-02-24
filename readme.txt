@@ -143,6 +143,9 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 
 == Changelog ==
 
+= () =
+* Change: Update copyright date (2019)
+
 = 2.1.1 (2018-05-08) =
 * Change: Cast result of various filters as boolean values
 * New: Add README.md
