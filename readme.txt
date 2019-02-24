@@ -5,7 +5,7 @@ Tags: draft, drafts, admin, menu, multiuser, post, page, post_type, shortcut, co
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
-Tested up to: 4.9
+Tested up to: 5.1
 Stable tag: 2.1.1
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
@@ -144,6 +144,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 == Changelog ==
 
 = () =
+* Change: Note compatibility through WP 5.1+
 * Change: Update copyright date (2019)
 * Change: Update License URI to be HTTPS
 
