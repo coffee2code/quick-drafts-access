@@ -3,7 +3,7 @@ Contributors: coffee2code
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522
 Tags: draft, drafts, admin, menu, multiuser, post, page, post_type, shortcut, coffee2code
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 4.9
 Stable tag: 2.1.1
@@ -145,6 +145,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 
 = () =
 * Change: Update copyright date (2019)
+* Change: Update License URI to be HTTPS
 
 = 2.1.1 (2018-05-08) =
 * Change: Cast result of various filters as boolean values

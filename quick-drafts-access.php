@@ -8,7 +8,7 @@
  * Text Domain: quick-drafts-access
  * Domain Path: /lang/
  * License:     GPLv2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: Adds a link to Drafts under the Posts, Pages, and other custom post type sections in the admin menu.
  *
  * Compatible with WordPress 4.6 through 4.9+.
