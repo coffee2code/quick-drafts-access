@@ -225,6 +225,6 @@ class c2c_QuickDraftsAccess {
 
 }
 
-c2c_QuickDraftsAccess::init();
+add_action( 'plugins_loaded', array( 'c2c_QuickDraftsAccess', 'init' ) );
 
 endif;

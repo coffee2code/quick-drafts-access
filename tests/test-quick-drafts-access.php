@@ -12,6 +12,10 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 		$this->assertEquals( '2.1.1', c2c_QuickDraftsAccess::version() );
 	}
 
+	public function tests_hook_action_plugins_loaded() {
+		$this->assertNotFalse( has_action( 'plugins_loaded', array( 'c2c_QuickDraftsAccess', 'init' ) ) );
+	}
+
 	public function test_hooks_action_admin_init() {
 		$this->assertNotFalse( has_action( 'admin_init', array( 'c2c_QuickDraftsAccess', 'admin_init' ) ) );
 	}
