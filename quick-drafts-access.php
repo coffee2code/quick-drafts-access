@@ -86,15 +86,28 @@ class c2c_QuickDraftsAccess {
 	}
 
 	/**
-	 * Adds the drafts link(s) to the admin menu.
+	 * Returns the post types.
+	 *
+	 * @since 2.2
+	 *
+	 * @return array
 	 */
-	public static function quick_drafts_access() {
-
+	public static function get_post_types() {
 		// Get a list of all post type with a UI.
 		$post_types  = (array) get_post_types( array( 'show_ui' => true ), 'object' );
 
 		// Permit filtering of the post types handled by the plugin.
 		$post_types  = (array) apply_filters( 'c2c_quick_drafts_access_post_types', $post_types );
+
+		return $post_types;
+	}
+
+	/**
+	 * Adds the drafts link(s) to the admin menu.
+	 */
+	public static function quick_drafts_access() {
+
+		$post_types = self::get_post_types();
 
 		// Memoized post status object.
 		$post_status = null;

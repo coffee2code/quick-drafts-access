@@ -144,6 +144,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 == Changelog ==
 
 = () =
+* New: Extract functionality for getting filtered list of post types into `get_post_types()`
 * Change: Initialize plugin on 'plugins_loaded' action instead of on load
 * Change: Note compatibility through WP 5.1+
 * Change: Update copyright date (2019)
