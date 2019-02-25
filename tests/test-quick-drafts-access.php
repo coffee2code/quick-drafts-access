@@ -58,7 +58,7 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 	 * Hooks
 	 */
 
-	public function tests_hook_action_plugins_loaded() {
+	public function tests_hooks_action_plugins_loaded() {
 		$this->assertNotFalse( has_action( 'plugins_loaded', array( 'c2c_QuickDraftsAccess', 'init' ) ) );
 	}
 
