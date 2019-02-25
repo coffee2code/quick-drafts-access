@@ -96,7 +96,11 @@ class c2c_QuickDraftsAccess {
 		// Get a list of all post type with a UI.
 		$post_types  = (array) get_post_types( array( 'show_ui' => true ), 'object' );
 
-		// Permit filtering of the post types handled by the plugin.
+		/**
+		 * Customizes the list of post_types for which the draft links will be shown.
+		 *
+		 * @param array $post_types The post types.
+		 */
 		return  (array) apply_filters( 'c2c_quick_drafts_access_post_types', $post_types );
 	}
 
@@ -145,7 +149,27 @@ class c2c_QuickDraftsAccess {
 			}
 
 			// Permit override of default view state for draft links.
+
+			/**
+			 * Customizes whether the 'All Drafts' link will appear at all for a post
+			 * type. If true, then the 'c2c_quick_drafts_access_show_if_empty' filter
+			 * would ultimately determine if the link should appear based on the
+			 * presence of actual drafts.
+			 *
+			 * @param bool   $allow     Show the "All Drafts" link in admin menu? Default true.
+			 * @param object $post_type The post type object.
+			 */
 			$show_all_drafts = (bool) apply_filters( 'c2c_quick_drafts_access_show_all_drafts_menu_link', true, $post_type );
+
+			/**
+			 * Customizes whether the 'My Drafts' link will appear at all for a post
+			 * type. If true, then the 'c2c_quick_drafts_access_show_if_empty' filter
+			 * would ultimately determine if the link should appear based on the
+			 * presence of actual drafts.
+			 *
+			 * @param bool   $allow     Show the "My Drafts" link in admin menu? Default true.
+			 * @param object $post_type The post type object.
+			 */
 			$show_my_drafts  = (bool) apply_filters( 'c2c_quick_drafts_access_show_my_drafts_menu_link',  true, $post_type );
 
 			// Count of all drafts the user has for this post type.
@@ -170,8 +194,21 @@ class c2c_QuickDraftsAccess {
 				// Count of all drafts readable by the user.
 				$num_all_drafts = (int) wp_count_posts( $name, 'readable' )->draft;
 
+				/**
+				 * Customizes whether the 'All Drafts' and/or 'My Drafts' links will appear
+				 * for a post type when that post type currently has no drafts.
+				 *
+				 * @param bool   $show           Show drafts link if there aren't any
+				 *                               drafts? Default false.
+				 * @param string $post_type_name The post type name.
+				 * @param string $post_type      The post type object.
+				 * @param string $menu_type      The type of draft menu link. Either 'all'
+				 *                               for 'All Drafts' or 'my' for 'My Drafts'.
+				 */
+				$show_if_empty = (bool) apply_filters( 'c2c_quick_drafts_access_show_if_empty', false, $name, $post_type, 'all' );
+
 				// Show the 'All Drafts' link if there are drafts, or if forced to do so via filter.
-				if ( ( $num_all_drafts > 0 ) || (bool) apply_filters( 'c2c_quick_drafts_access_show_if_empty', false, $name, $post_type, 'all' ) ) {
+				if ( ( $num_all_drafts > 0 ) || $show_if_empty ) {
 
 					// Show the menu link unless 'My Drafts' is also being shown AND the user is responsible for all drafts
 					if ( ! ( $show_my_drafts && $num_all_drafts === $num_my_drafts ) ) {
@@ -207,8 +244,11 @@ class c2c_QuickDraftsAccess {
 				// Limit query to those posts authored by the current user.
 				$query_vars['author'] = get_current_user_id();
 
+				/** This filter is documented in quick-drafts-access.php */
+				$show_if_empty = (bool) apply_filters( 'c2c_quick_drafts_access_show_if_empty', false, $name, $post_type, 'my' );
+
 				// Show the 'My Drafts' link if there are drafts, or if forced to do so via filter.
-				if ( ( $num_my_drafts > 0 ) || (bool) apply_filters( 'c2c_quick_drafts_access_show_if_empty', false, $name, $post_type, 'my' ) ) {
+				if ( ( $num_my_drafts > 0 ) || $show_if_empty ) {
 
 					// Link label.
 					if ( 0 === $num_my_drafts ) {
