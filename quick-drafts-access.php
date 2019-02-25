@@ -67,7 +67,7 @@ class c2c_QuickDraftsAccess {
 	 */
 	public static function init() {
 
-		// Hooke the admin init to load textdomain.
+		// Hook the admin init to load textdomain.
 		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
 
 		// Hook the admin menu to add links to drafts.
