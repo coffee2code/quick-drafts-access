@@ -88,7 +88,7 @@ class c2c_QuickDraftsAccess {
 	/**
 	 * Returns the post types.
 	 *
-	 * @since 2.2
+	 * @since 2.2.0
 	 *
 	 * @return array
 	 */
@@ -97,9 +97,7 @@ class c2c_QuickDraftsAccess {
 		$post_types  = (array) get_post_types( array( 'show_ui' => true ), 'object' );
 
 		// Permit filtering of the post types handled by the plugin.
-		$post_types  = (array) apply_filters( 'c2c_quick_drafts_access_post_types', $post_types );
-
-		return $post_types;
+		return  (array) apply_filters( 'c2c_quick_drafts_access_post_types', $post_types );
 	}
 
 	/**
