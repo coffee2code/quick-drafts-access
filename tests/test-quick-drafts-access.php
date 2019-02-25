@@ -70,4 +70,8 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 		$this->assertNotFalse( has_action( 'admin_menu', array( 'c2c_QuickDraftsAccess', 'quick_drafts_access' ) ) );
 	}
 
+	public function tests_hooks_action_restrict_manage_posts() {
+		$this->assertNotFalse( has_action( 'restrict_manage_posts', array( 'c2c_QuickDraftsAccess', 'filter_drafts_by_author' ) ) );
+	}
+
 }

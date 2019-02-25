@@ -25,6 +25,8 @@ Also, the draft link(s) only appear for users who have the capability to edit po
 
 The plugin hides the two types of draft links when no related drafts for that post type are present. See the Filters section for how to override this behavior. Filters are also provided to disable the plugin from ever showing the "All Drafts" or the "My Drafts" links.
 
+On plugin admin listings of only draft posts, this plugin also adds a dropdown above the table that allows for the listing to be filtered by the selected draft author. (Only users who actually have a draft post are included in the dropdown.)
+
 Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/quick-drafts-access/) | [Plugin Directory Page](https://wordpress.org/plugins/quick-drafts-access/) | [GitHub](https://github.com/coffee2code/quick-drafts-access/) | [Author Homepage](http://coffee2code.com)
 
 
@@ -58,7 +60,7 @@ Yes, which is why the plugin hides the "All Drafts" link when the "My Drafts" li
 
 == Filters ==
 
-The plugin is further customizable via four filters. Such code should ideally be put into a mu-plugin or site-specific plugin (which is beyond the scope of this readme to explain).
+The plugin is further customizable via five filters. Such code should ideally be put into a mu-plugin or site-specific plugin (which is beyond the scope of this readme to explain).
 
 **c2c_quick_drafts_access_post_types**
 
@@ -140,10 +142,28 @@ Example:
 add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 `
 
+**c2c_quick_drafts_access_disable_filter_dropdown**
+
+The 'c2c_quick_drafts_access_disable_filter_dropdown' filter allowing for removal of the 'Drafts By' dropdown from drafts post list table.
+
+Arguments:
+
+* $disable (bool): Disable the 'drafts by' dropdown? Default false.
+* $post_type (string): The post type slug.
+
+Example:
+
+`
+// Hide the dropdown filter for draft authors above the admin post listing
+// table in draft views.
+add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', '__return_true' );
+`
+
 
 == Changelog ==
 
 = () =
+* New: Add dropdown on draft listing of posts to filter which author's drafts to list
 * New: Extract functionality for getting filtered list of post types into `get_post_types()`
 * New: Add inline documentation for hooks
 * Change: Initialize plugin on 'plugins_loaded' action instead of on load

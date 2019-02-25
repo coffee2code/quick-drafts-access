@@ -18,13 +18,15 @@
  *
  * @package Quick_Drafts_Access
  * @author  Scott Reilly
- * @version 2.1.1
+ * @version 2.2
  */
 
 /*
  * TODO:
  * - Cache user draft count; clear count when a post transitions to/from draft
  * - More unit tests
+ * - For draft author filter dropdown, perhaps omit draft authors whose drafts
+ *   are not editable by the current user
  */
 
 /*
@@ -72,6 +74,9 @@ class c2c_QuickDraftsAccess {
 
 		// Hook the admin menu to add links to drafts.
 		add_action( 'admin_menu', array( __CLASS__, 'quick_drafts_access' ) );
+
+		// Hook the post table actions to add dropdown to filter for draft author.
+		add_action( 'restrict_manage_posts', array( __CLASS__, 'filter_drafts_by_author' ), 10, 2 );
 
 	}
 
@@ -272,6 +277,77 @@ class c2c_QuickDraftsAccess {
 
 		}
 
+	}
+
+	/**
+	 * Displays a dropdown for filtering the draft posts list table by author.
+	 *
+	 * @since 2.2.0
+	 *
+	 * @param string $post_type The post type slug.
+	 * @param string $top       The location of the extra table nav markup.
+	 */
+	public static function filter_drafts_by_author( $post_type, $which ) {
+		global $wpdb;
+
+		if (
+			'top' !== $which
+		||
+			! isset( $_GET['post_status'] )
+		||
+			'draft' !== $_GET['post_status']
+		||
+			/**
+			 * Filter for removal of 'Drafts By' dropdown from drafts post list table.
+			 *
+			 * @since 2.2.0
+			 *
+			 * @param bool   $disable   Disable the 'drafts by' dropdown? Default false.
+			 * @param string $post_type The post type slug.
+			 */
+			(bool) apply_filters( 'c2c_quick_drafts_access_disable_filter_dropdown', false, $post_type )
+		||
+			// Ensure post type is supported.
+			in_array( $post_type, self::get_post_types() )
+		) {
+			return;
+		}
+
+		// Ensure there are other draft authors to filter on.
+		$draft_authors = $wpdb->get_col( "SELECT DISTINCT post_author FROM $wpdb->posts WHERE post_status = 'draft'" );
+		if ( ! $draft_authors ) {
+			return;
+		}
+
+		// Get usernames.
+		$users = array();
+		foreach ( $draft_authors as $user_id ) {
+			$users[ $user_id ] = new WP_User( $user_id );
+		}
+		uasort( $users, function ( $a, $b ) { return strnatcmp( $a->display_name, $b->display_name ); } );
+
+		$curr_draft_author = isset( $_GET['author'] ) ? (int) $_GET['author'] : 0;
+
+		?>
+		<label for="filter-by-draft-author" class="screen-reader-text"><?php _e( 'Filter by author', 'quick-drafts-access' ); ?></label>
+			<select name="author" id="filter-by-draft-author">
+				<option<?php selected( $curr_draft_author, 0 ); ?> value="0"><?php _e( 'All Draft Authors',  'quick-drafts-access' ); ?></option>
+				<?php
+				foreach ( $users as $author_id => $author ) {
+					if ( 0 == $author_id ) {
+						continue;
+					}
+
+					printf(
+						"<option %s value='%d'>%s</option>\n",
+						selected( $curr_draft_author, $author_id, false ),
+						$author_id,
+						esc_html( $author->display_name )
+					);
+				}
+				?>
+			</select>
+	<?php
 	}
 
 }
