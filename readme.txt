@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.1
-Stable tag: 2.1.1
+Stable tag: 2.2
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
@@ -162,9 +162,10 @@ add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', '__return_true' )
 
 == Changelog ==
 
-= () =
+= 2.2 (2019-02-25) =
 * New: Add dropdown on draft listing of posts to filter which author's drafts to list
 * New: Extract functionality for getting filtered list of post types into `get_post_types()`
+* New: Add a few more unit tests
 * New: Add inline documentation for hooks
 * Change: Initialize plugin on 'plugins_loaded' action instead of on load
 * Change: Note compatibility through WP 5.1+
@@ -275,6 +276,9 @@ add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', '__return_true' )
 
 
 == Upgrade Notice ==
+
+= 2.2 =
+Minor update: added dropdown to filter listing of drafts by author, noted compatibility through WP 5.1+, updated copyright date (2019), and more.
 
 = 2.1.1 =
 Trivial update: ensured filtered values are booleans, added README.md, noted compatibility through WP 4.9+, and updated copyright date (2018)

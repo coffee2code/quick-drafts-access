@@ -37,7 +37,7 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 	}
 
 	public function test_get_version() {
-		$this->assertEquals( '2.1.1', c2c_QuickDraftsAccess::version() );
+		$this->assertEquals( '2.2', c2c_QuickDraftsAccess::version() );
 	}
 
 	public function test_get_post_types() {
