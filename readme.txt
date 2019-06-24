@@ -58,7 +58,7 @@ Like the Posts and Pages admin tables in WordPress, the default behavior of the 
 Yes, which is why the plugin hides the "All Drafts" link when the "My Drafts" link is configured to be displayed (which it is by default) and the user is responsible for all of the drafts for a given post type.
 
 
-== Filters ==
+== Hooks ==
 
 The plugin is further customizable via five filters. Such code should ideally be put into a mu-plugin or site-specific plugin (which is beyond the scope of this readme to explain).
 
