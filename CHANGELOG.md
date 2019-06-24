@@ -7,6 +7,7 @@
     * Change: Tweak unit test function names
     * Fix: Update `test_get_post_types()` to account for 'wp_block' post type
 * Change: Note compatibility through WP 5.2+
+* Change: Split paragraph in README.md's "Support" section into two
 
 ## 2.2 _(2019-02-25)_
 * New: Add dropdown on draft listing of posts to filter which author's drafts to list
