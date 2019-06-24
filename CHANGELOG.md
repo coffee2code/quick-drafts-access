@@ -4,6 +4,7 @@
 * New: Add CHANGELOG.md and move all but most recent changelog entries into it
 * Unit tests:
     * Change: Update unit test install script and bootstrap to use latest WP unit test repo
+    * Change: Tweak unit test function names
 * Change: Note compatibility through WP 5.2+
 
 ## 2.2 _(2019-02-25)_

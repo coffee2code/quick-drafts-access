@@ -58,7 +58,7 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 	 * Hooks
 	 */
 
-	public function tests_hooks_action_plugins_loaded() {
+	public function test_hooks_action_plugins_loaded() {
 		$this->assertNotFalse( has_action( 'plugins_loaded', array( 'c2c_QuickDraftsAccess', 'init' ) ) );
 	}
 
@@ -70,7 +70,7 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 		$this->assertNotFalse( has_action( 'admin_menu', array( 'c2c_QuickDraftsAccess', 'quick_drafts_access' ) ) );
 	}
 
-	public function tests_hooks_action_restrict_manage_posts() {
+	public function test_hooks_action_restrict_manage_posts() {
 		$this->assertNotFalse( has_action( 'restrict_manage_posts', array( 'c2c_QuickDraftsAccess', 'filter_drafts_by_author' ) ) );
 	}
 
