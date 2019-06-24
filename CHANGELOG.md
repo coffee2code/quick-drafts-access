@@ -5,6 +5,7 @@
 * Unit tests:
     * Change: Update unit test install script and bootstrap to use latest WP unit test repo
     * Change: Tweak unit test function names
+    * Fix: Update `test_get_post_types()` to account for 'wp_block' post type
 * Change: Note compatibility through WP 5.2+
 
 ## 2.2 _(2019-02-25)_
