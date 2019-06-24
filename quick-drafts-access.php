@@ -98,7 +98,7 @@ class c2c_QuickDraftsAccess {
 	 * @return array
 	 */
 	public static function get_post_types() {
-		// Get a list of all post type with a UI.
+		// Get a list of all post types with a UI.
 		$post_types  = (array) get_post_types( array( 'show_ui' => true ), 'object' );
 
 		/**
