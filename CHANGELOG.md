@@ -1,6 +1,6 @@
 # Changelog
 
-## _(in-progress)_
+## 2.2.1 _(2019-06-24)_
 * New: Add CHANGELOG.md and move all but most recent changelog entries into it
 * Unit tests:
     * Change: Update unit test install script and bootstrap to use latest WP unit test repo

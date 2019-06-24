@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.2
-Stable tag: 2.2
+Stable tag: 2.2.1
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
@@ -163,6 +163,17 @@ add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', '__return_true' )
 
 == Changelog ==
 
+= 2.2.1 (2019-06-24) =
+* New: Add CHANGELOG.md and move all but most recent changelog entries into it
+* Unit tests:
+    * Change: Update unit test install script and bootstrap to use latest WP unit test repo
+    * Change: Tweak unit test function names
+    * Fix: Update `test_get_post_types()` to account for 'wp_block' post type
+* Change: Note compatibility through WP 5.2+
+* Change: Rename readme.txt section from 'Filters' to 'Hooks'
+* Change: Split paragraph in README.md's "Support" section into two
+* New: Add screenshot for draft author filter dropdown
+
 = 2.2 (2019-02-25) =
 * New: Add dropdown on draft listing of posts to filter which author's drafts to list
 * New: Extract functionality for getting filtered list of post types into `get_post_types()`
@@ -187,6 +198,9 @@ _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/qu
 
 
 == Upgrade Notice ==
+
+= 2.2.1 =
+Trivial update: modernized unit tests, added screenshot for draft author filter dropdown, and noted compatibility through WP 5.2+
 
 = 2.2 =
 Minor update: added dropdown to filter listing of drafts by author, noted compatibility through WP 5.1+, updated copyright date (2019), and more.

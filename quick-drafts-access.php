@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Quick Drafts Access
- * Version:     2.2
+ * Version:     2.2.1
  * Plugin URI:  http://coffee2code.com/wp-plugins/quick-drafts-access/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
@@ -18,7 +18,7 @@
  *
  * @package Quick_Drafts_Access
  * @author  Scott Reilly
- * @version 2.2
+ * @version 2.2.1
  */
 
 /*
@@ -61,7 +61,7 @@ class c2c_QuickDraftsAccess {
 	 * @return string
 	 */
 	public static function version() {
-		return '2.2';
+		return '2.2.1';
 	}
 
 	/**
