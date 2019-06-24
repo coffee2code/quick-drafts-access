@@ -9,6 +9,7 @@
 * Change: Note compatibility through WP 5.2+
 * Change: Rename readme.txt section from 'Filters' to 'Hooks'
 * Change: Split paragraph in README.md's "Support" section into two
+* New: Add screenshot for draft author filter dropdown
 
 ## 2.2 _(2019-02-25)_
 * New: Add dropdown on draft listing of posts to filter which author's drafts to list

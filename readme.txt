@@ -39,6 +39,7 @@ Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/quick-drafts-access/)
 == Screenshots ==
 
 1. A screenshot of the main admin menu (with the menu expanded) showing the "All Drafts" and "My Drafts" link (with pending draft counts) for both posts (in the sidebar menu popup) and pages (in the expanded sidebar menu). Note that for pages, the "All Drafts" link is not shown because the current user is responsible for all of the current page drafts.
+2. When viewing a listing of drafts, the plugin introduces a dropdown above the posts table that allows filtering the drafts by post author.
 
 
 == Frequently Asked Questions ==
