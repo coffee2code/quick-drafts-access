@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * New: Add CHANGELOG.md and move all but most recent changelog entries into it
+* Change: Note compatibility through WP 5.2+
 
 ## 2.2 _(2019-02-25)_
 * New: Add dropdown on draft listing of posts to filter which author's drafts to list

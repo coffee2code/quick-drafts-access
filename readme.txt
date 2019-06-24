@@ -5,7 +5,7 @@ Tags: draft, drafts, admin, menu, multiuser, post, page, post_type, shortcut, co
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
-Tested up to: 5.1
+Tested up to: 5.2
 Stable tag: 2.2
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
