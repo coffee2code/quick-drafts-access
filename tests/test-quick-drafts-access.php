@@ -44,6 +44,10 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 		$this->assertEquals( array( 'post', 'page', 'attachment', 'wp_block' ), array_keys( c2c_QuickDraftsAccess::get_post_types() ) );
 	}
 
+	public function test_hooks_plugins_loaded() {
+		$this->assertEquals( 10, has_action( 'plugins_loaded' , array( 'c2c_QuickDraftsAccess', 'init' ) ) );
+	}
+
 	/*
 	 * Filter: c2c_quick_drafts_access_post_types
 	 */
