@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.3
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
@@ -163,6 +163,11 @@ add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', '__return_true' )
 
 == Changelog ==
 
+= 2.2.2 (2019-12-15) =
+* New: Unit tests: Add test to verify plugin hooks `plugins_loaded` action to initialize itself
+* Change: Note compatibility through WP 5.3+
+* Change: Update copyright date (2020)
+
 = 2.2.1 (2019-06-24) =
 * New: Add CHANGELOG.md and move all but most recent changelog entries into it
 * Unit tests:
@@ -185,19 +190,13 @@ add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', '__return_true' )
 * Change: Update License URI to be HTTPS
 * Change: Remove 'Domain Path' header setting
 
-= 2.1.1 (2018-05-08) =
-* Change: Cast result of various filters as boolean values
-* New: Add README.md
-* Change: Add GitHub link to readme
-* Change: Unit tests: Minor whitespace tweaks to bootstrap
-* Change: Modify formatting of hook names in readme to prevent being uppercased when shown in the Plugin Directory
-* Change: Note compatibility through WP 4.9+
-* Change: Update copyright date (2018)
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/quick-drafts-access/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.2.2 =
+Trivial update: noted compatibility through WP 5.3+ and updated copyright date (2020)
 
 = 2.2.1 =
 Trivial update: modernized unit tests, added screenshot for draft author filter dropdown, and noted compatibility through WP 5.2+
