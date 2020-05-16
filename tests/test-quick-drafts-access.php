@@ -56,19 +56,19 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 	 */
 
 	public function test_hooks_action_plugins_loaded() {
-		$this->assertNotFalse( has_action( 'plugins_loaded', array( 'c2c_QuickDraftsAccess', 'init' ) ) );
+		$this->assertEquals( 10, has_action( 'plugins_loaded', array( 'c2c_QuickDraftsAccess', 'init' ) ) );
 	}
 
 	public function test_hooks_action_admin_init() {
-		$this->assertNotFalse( has_action( 'admin_init', array( 'c2c_QuickDraftsAccess', 'admin_init' ) ) );
+		$this->assertEquals( 10, has_action( 'admin_init', array( 'c2c_QuickDraftsAccess', 'admin_init' ) ) );
 	}
 
 	public function test_hooks_action_admin_menu() {
-		$this->assertNotFalse( has_action( 'admin_menu', array( 'c2c_QuickDraftsAccess', 'quick_drafts_access' ) ) );
+		$this->assertEquals( 10, has_action( 'admin_menu', array( 'c2c_QuickDraftsAccess', 'quick_drafts_access' ) ) );
 	}
 
 	public function test_hooks_action_restrict_manage_posts() {
-		$this->assertNotFalse( has_action( 'restrict_manage_posts', array( 'c2c_QuickDraftsAccess', 'filter_drafts_by_author' ) ) );
+		$this->assertEquals( 10, has_action( 'restrict_manage_posts', array( 'c2c_QuickDraftsAccess', 'filter_drafts_by_author' ) ) );
 	}
 
 }
