@@ -4,13 +4,6 @@ defined( 'ABSPATH' ) or die();
 
 class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 
-	public function tearDown() {
-		parent::tearDown();
-
-		remove_filter( 'c2c_quick_drafts_access_post_types', array( $this, 'c2c_quick_drafts_access_post_types' ) );
-	}
-
-
 	//
 	//
 	// FUNCTIONS FOR HOOKING ACTIONS/FILTERS
