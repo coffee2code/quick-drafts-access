@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Quick Drafts Access
  * Version:     2.2.2
- * Plugin URI:  http://coffee2code.com/wp-plugins/quick-drafts-access/
+ * Plugin URI:  https://coffee2code.com/wp-plugins/quick-drafts-access/
  * Author:      Scott Reilly
- * Author URI:  http://coffee2code.com/
+ * Author URI:  https://coffee2code.com/
  * Text Domain: quick-drafts-access
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html

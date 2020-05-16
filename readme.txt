@@ -27,7 +27,7 @@ The plugin hides the two types of draft links when no related drafts for that po
 
 On plugin admin listings of only draft posts, this plugin also adds a dropdown above the table that allows for the listing to be filtered by the selected draft author. (Only users who actually have a draft post are included in the dropdown.)
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/quick-drafts-access/) | [Plugin Directory Page](https://wordpress.org/plugins/quick-drafts-access/) | [GitHub](https://github.com/coffee2code/quick-drafts-access/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](https://coffee2code.com/wp-plugins/quick-drafts-access/) | [Plugin Directory Page](https://wordpress.org/plugins/quick-drafts-access/) | [GitHub](https://github.com/coffee2code/quick-drafts-access/) | [Author Homepage](https://coffee2code.com)
 
 
 == Installation ==
