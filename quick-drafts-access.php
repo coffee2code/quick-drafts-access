@@ -22,14 +22,6 @@
  */
 
 /*
- * TODO:
- * - Cache user draft count; clear count when a post transitions to/from draft
- * - More unit tests
- * - For draft author filter dropdown, perhaps omit draft authors whose drafts
- *   are not editable by the current user
- */
-
-/*
 	Copyright (c) 2010-2020 by Scott Reilly (aka coffee2code)
 
 	This program is free software; you can redistribute it and/or
