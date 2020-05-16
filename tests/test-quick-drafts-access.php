@@ -33,12 +33,16 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 		$this->assertEquals( '2.2.2', c2c_QuickDraftsAccess::version() );
 	}
 
-	public function test_get_post_types() {
-		$this->assertEquals( array( 'post', 'page', 'attachment', 'wp_block' ), array_keys( c2c_QuickDraftsAccess::get_post_types() ) );
-	}
-
 	public function test_hooks_plugins_loaded() {
 		$this->assertEquals( 10, has_action( 'plugins_loaded' , array( 'c2c_QuickDraftsAccess', 'init' ) ) );
+	}
+
+	/*
+	 * get_post_types()
+	 */
+
+	public function test_get_post_types() {
+		$this->assertEquals( array( 'post', 'page', 'attachment', 'wp_block' ), array_keys( c2c_QuickDraftsAccess::get_post_types() ) );
 	}
 
 	/*
@@ -54,10 +58,6 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 	/*
 	 * Hooks
 	 */
-
-	public function test_hooks_action_plugins_loaded() {
-		$this->assertEquals( 10, has_action( 'plugins_loaded', array( 'c2c_QuickDraftsAccess', 'init' ) ) );
-	}
 
 	public function test_hooks_action_admin_init() {
 		$this->assertEquals( 10, has_action( 'admin_init', array( 'c2c_QuickDraftsAccess', 'admin_init' ) ) );
