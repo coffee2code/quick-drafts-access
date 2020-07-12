@@ -6,6 +6,7 @@
 * Change: Note compatibility through WP 5.4+
 * Change: Update links to coffee2code.com to be HTTPS
 * Unit tests:
+    * New: Add tests for `filter_drafts_by_author()`
     * Change: Remove unnecessary unregistering of hooks and thusly `tearDown()`
     * Change: More specificly check hook priorities rather than existence when seeing if a hook has been registered
     * Change: Remove duplicate test `test_hooks_action_plugins_loaded()`

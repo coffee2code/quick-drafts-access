@@ -56,6 +56,63 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 	}
 
 	/*
+	 * filter_drafts_by_author()
+	 */
+
+	public function test_filter_drafts_by_author_outputs_nothing_if_second_arg_is_not_top() {
+		$this->factory->post->create( array( 'post_status' => 'draft' ) );
+		$_GET['post_status'] = 'draft';
+
+		$this->expectOutputRegex( '/^$/', c2c_QuickDraftsAccess::filter_drafts_by_author( 'post', 'bottom' ) );
+	}
+
+	public function test_filter_drafts_by_author_outputs_nothing_if_GET_post_status_is_not_draft() {
+		$this->factory->post->create( array( 'post_status' => 'draft' ) );
+		$_GET['post_status'] = 'publish';
+
+		$this->expectOutputRegex( '/^$/', c2c_QuickDraftsAccess::filter_drafts_by_author( 'post', 'top' ) );
+	}
+
+	public function test_filter_drafts_by_author_outputs_nothing_if_post_type_not_supported() {
+		$this->factory->post->create( array( 'post_type' => 'example', 'post_status' => 'draft' ) );
+		$_GET['post_status'] = 'draft';
+
+		$this->expectOutputRegex( '/^$/', c2c_QuickDraftsAccess::filter_drafts_by_author( 'example', 'top' ) );
+	}
+
+	public function test_filter_drafts_by_author_outputs_markup() {
+		$user_id = $this->factory->user->create( array( 'display_name' => 'Test User' ) );
+		$this->factory->post->create( array( 'post_status' => 'draft', 'post_author' => $user_id ) );
+		$_GET['post_status'] = 'draft';
+
+		$expected = <<<HTML
+		<label for="filter-by-draft-author" class="screen-reader-text">Filter by author</label>
+			<select name="author" id="filter-by-draft-author">
+				<option selected='selected' value="0">All Draft Authors</option>
+				<option value="{$user_id}">Test User</option>
+			</select>
+
+HTML;
+
+		$this->expectOutputRegex( '~^' . preg_quote( $expected ) . '$~', c2c_QuickDraftsAccess::filter_drafts_by_author( 'post', 'top' ) );
+	}
+
+	/*
+	 * filter: c2c_quick_drafts_access_disable_filter_dropdown
+	 */
+
+	public function test_filter_c2c_quick_drafts_access_disable_filter_dropdown() {
+		add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', function( $disable, $post_type ) {
+			return 'post' === $post_type;
+		}, 10, 2 );
+
+		$this->factory->post->create( array( 'post_status' => 'draft' ) );
+		$_GET['post_status'] = 'draft';
+
+		$this->expectOutputRegex( '/^$/', c2c_QuickDraftsAccess::filter_drafts_by_author( 'post', 'top' ) );
+	}
+
+	/*
 	 * Hooks
 	 */
 
