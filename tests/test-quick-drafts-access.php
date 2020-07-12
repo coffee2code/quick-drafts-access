@@ -45,6 +45,17 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 		$this->assertEquals( array( 'post', 'page', 'attachment', 'wp_block' ), array_keys( c2c_QuickDraftsAccess::get_post_types() ) );
 	}
 
+	public function test_get_post_types_returns_array() {
+		add_filter( 'c2c_quick_drafts_access_post_types', '__return_false' );
+
+		$this->assertIsArray( c2c_QuickDraftsAccess::get_post_types() );
+
+		add_filter( 'c2c_quick_drafts_access_post_types', '__return_zero' );
+
+		$this->assertIsArray( c2c_QuickDraftsAccess::get_post_types() );
+		$this->assertEquals( array( '0' ), c2c_QuickDraftsAccess::get_post_types() );
+	}
+
 	/*
 	 * Filter: c2c_quick_drafts_access_post_types
 	 */
