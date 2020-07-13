@@ -331,7 +331,7 @@ class c2c_QuickDraftsAccess {
 					}
 
 					printf(
-						"<option %s value='%d'>%s</option>\n",
+						"<option%s value=\"%d\">%s</option>\n",
 						selected( $curr_draft_author, $author_id, false ),
 						$author_id,
 						esc_html( $author->display_name )

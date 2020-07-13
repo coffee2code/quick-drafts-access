@@ -6,6 +6,7 @@
 * Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
 * Change: Note compatibility through WP 5.4+
 * Change: Update links to coffee2code.com to be HTTPS
+* Change: Remove extraneous inline space in output of 'option' tag
 * Change: Remove extraneous inline spaces in code
 * Unit tests:
     * New: Add tests for `filter_drafts_by_author()`
