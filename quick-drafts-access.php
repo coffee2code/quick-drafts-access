@@ -339,7 +339,7 @@ class c2c_QuickDraftsAccess {
 				}
 				?>
 			</select>
-	<?php
+<?php
 	}
 
 }
