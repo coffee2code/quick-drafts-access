@@ -300,7 +300,7 @@ class c2c_QuickDraftsAccess {
 			(bool) apply_filters( 'c2c_quick_drafts_access_disable_filter_dropdown', false, $post_type )
 		||
 			// Ensure post type is supported.
-			in_array( $post_type, self::get_post_types() )
+			! in_array( $post_type, array_keys( self::get_post_types() ) )
 		) {
 			return;
 		}
