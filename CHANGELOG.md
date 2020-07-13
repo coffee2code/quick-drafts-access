@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Fix: Fix plugin name defined in README.md
+
 ## 2.2.3 _(2020-07-12)_
 
 ### Highlights:
