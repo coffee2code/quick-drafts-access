@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.4
-Stable tag: 2.2.2
+Stable tag: 2.2.3
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
@@ -163,6 +163,19 @@ add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', '__return_true' )
 
 == Changelog ==
 
+= 2.2.3 (2020-07-12) =
+Highlights:
+
+* This minor release fixes the post type support check to prevent display of dropdown for unsupported post types, adds a TODO.md file, updates a few URLs to be HTTPS, tweaks formatting of output markup, and notes compatibility through WP 5.4+.
+
+Details:
+
+* New: Add TODO.md and move existing TODO list from top of main plugin file into it
+* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
+* Change: Note compatibility through WP 5.4+
+* Change: Update links to coffee2code.com to be HTTPS
+* Change: Unit tests: Remove unnecessary unregistering of hooks and thusly `tearDown()`
+
 = 2.2.2 (2019-12-15) =
 * New: Unit tests: Add test to verify plugin hooks `plugins_loaded` action to initialize itself
 * Change: Note compatibility through WP 5.3+
@@ -179,21 +192,13 @@ add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', '__return_true' )
 * Change: Split paragraph in README.md's "Support" section into two
 * New: Add screenshot for draft author filter dropdown
 
-= 2.2 (2019-02-25) =
-* New: Add dropdown on draft listing of posts to filter which author's drafts to list
-* New: Extract functionality for getting filtered list of post types into `get_post_types()`
-* New: Add a few more unit tests
-* New: Add inline documentation for hooks
-* Change: Initialize plugin on 'plugins_loaded' action instead of on load
-* Change: Note compatibility through WP 5.1+
-* Change: Update copyright date (2019)
-* Change: Update License URI to be HTTPS
-* Change: Remove 'Domain Path' header setting
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/quick-drafts-access/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.2.3 =
+Minor update: Fixed post type support check to prevent display of dropdown for unsupported post types, added TODO.md file, updated a few URLs to be HTTPS, tweaked formatting of output markup, and noted compatibility through WP 5.4+.
 
 = 2.2.2 =
 Trivial update: noted compatibility through WP 5.3+ and updated copyright date (2020)

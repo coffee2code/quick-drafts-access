@@ -1,6 +1,13 @@
 # Changelog
 
-## 2.2.3 _(2020-05-16)_
+## 2.2.3 _(2020-07-12)_
+
+### Highlights:
+
+This minor release fixes the post type support check to prevent display of dropdown for unsupported post types, adds a TODO.md file, updates a few URLs to be HTTPS, tweaks formatting of output markup, and notes compatibility through WP 5.4+.
+
+### Details:
+
 * Fix: Properly check post type support to prevent display of dropdown for unsupported post types
 * New: Add TODO.md and move existing TODO list from top of main plugin file into it (and add items to it)
 * Change: Note compatibility through WP 5.4+
