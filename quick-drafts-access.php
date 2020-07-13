@@ -83,7 +83,7 @@ class c2c_QuickDraftsAccess {
 	}
 
 	/**
-	 * Returns the post types.
+	 * Returns the supported post types.
 	 *
 	 * @since 2.2.0
 	 *
