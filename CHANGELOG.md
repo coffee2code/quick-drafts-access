@@ -2,7 +2,7 @@
 
 ## 2.2.3 _(2020-05-16)_
 * Fix: Properly check post type support to prevent display of dropdown for unsupported post types
-* New: Add TODO.md and move existing TODO list from top of main plugin file into it
+* New: Add TODO.md and move existing TODO list from top of main plugin file into it (and add items to it)
 * Change: Note compatibility through WP 5.4+
 * Change: Update links to coffee2code.com to be HTTPS
 * Change: Remove extraneous inline space in output of 'option' tag
