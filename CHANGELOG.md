@@ -1,11 +1,12 @@
 # Changelog
 
-## _(in-progress)_
+## 2.2.3 _(2020-05-16)_
 * Fix: Properly check post type support to prevent display of dropdown for unsupported post types
 * New: Add TODO.md and move existing TODO list from top of main plugin file into it
 * Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
 * Change: Note compatibility through WP 5.4+
 * Change: Update links to coffee2code.com to be HTTPS
+* Change: Remove extraneous inline spaces in code
 * Unit tests:
     * New: Add tests for `filter_drafts_by_author()`
     * Change: Remove unnecessary unregistering of hooks and thusly `tearDown()`

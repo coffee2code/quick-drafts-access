@@ -91,14 +91,14 @@ class c2c_QuickDraftsAccess {
 	 */
 	public static function get_post_types() {
 		// Get a list of all post types with a UI.
-		$post_types  = (array) get_post_types( array( 'show_ui' => true ), 'object' );
+		$post_types = (array) get_post_types( array( 'show_ui' => true ), 'object' );
 
 		/**
 		 * Customizes the list of post_types for which the draft links will be shown.
 		 *
 		 * @param array $post_types The post types.
 		 */
-		return  (array) apply_filters( 'c2c_quick_drafts_access_post_types', $post_types );
+		return (array) apply_filters( 'c2c_quick_drafts_access_post_types', $post_types );
 	}
 
 	/**
@@ -167,7 +167,7 @@ class c2c_QuickDraftsAccess {
 			 * @param bool   $allow     Show the "My Drafts" link in admin menu? Default true.
 			 * @param object $post_type The post type object.
 			 */
-			$show_my_drafts  = (bool) apply_filters( 'c2c_quick_drafts_access_show_my_drafts_menu_link',  true, $post_type );
+			$show_my_drafts = (bool) apply_filters( 'c2c_quick_drafts_access_show_my_drafts_menu_link',  true, $post_type );
 
 			// Count of all drafts the user has for this post type.
 			if ( $show_my_drafts ) {
