@@ -1,4 +1,4 @@
-# Expandable Dashboard Recent Comments
+# Quick Drafts Access
 
 A plugin for WordPress that adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
