@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.7
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
@@ -163,6 +163,11 @@ add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', '__return_true' )
 
 == Changelog ==
 
+= 2.2.4 (2021-03-27) =
+* Fix: Fix plugin name defined in README.md
+* Change: Note compatibility through WP 5.7+
+* Change: Update copyright date (2021)
+
 = 2.2.3 (2020-07-12) =
 Highlights:
 
@@ -181,21 +186,13 @@ Details:
 * Change: Note compatibility through WP 5.3+
 * Change: Update copyright date (2020)
 
-= 2.2.1 (2019-06-24) =
-* New: Add CHANGELOG.md and move all but most recent changelog entries into it
-* Unit tests:
-    * Change: Update unit test install script and bootstrap to use latest WP unit test repo
-    * Change: Tweak unit test function names
-    * Fix: Update `test_get_post_types()` to account for 'wp_block' post type
-* Change: Note compatibility through WP 5.2+
-* Change: Rename readme.txt section from 'Filters' to 'Hooks'
-* Change: Split paragraph in README.md's "Support" section into two
-* New: Add screenshot for draft author filter dropdown
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/quick-drafts-access/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.2.4 =
+Trivial update: noted compatibility through WP 5.7+ and updated copyright date (2021)
 
 = 2.2.3 =
 Minor update: Fixed post type support check to prevent display of dropdown for unsupported post types, added TODO.md file, updated a few URLs to be HTTPS, tweaked formatting of output markup, and noted compatibility through WP 5.4+.

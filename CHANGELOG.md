@@ -1,6 +1,6 @@
 # Changelog
 
-## _(in-progress)_
+## 2.2.4 _(2021-03-27)_
 * Fix: Fix plugin name defined in README.md
 * Change: Note compatibility through WP 5.7+
 * Change: Update copyright date (2021)
