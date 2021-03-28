@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * Fix: Fix plugin name defined in README.md
+* Change: Update copyright date (2021)
 
 ## 2.2.3 _(2020-07-12)_
 
