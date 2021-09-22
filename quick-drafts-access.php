@@ -91,7 +91,8 @@ class c2c_QuickDraftsAccess {
 	 */
 	public static function get_post_types() {
 		// Get a list of all post types with a UI.
-		$post_types = (array) get_post_types( array( 'show_ui' => true ), 'object' );
+		$post_types = (array) get_post_types( array( 'public' => true ), 'object' );
+		unset( $post_types[ 'attachment' ] );
 
 		/**
 		 * Customizes the list of post_types for which the draft links will be shown.

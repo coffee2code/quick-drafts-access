@@ -49,7 +49,7 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 
 	public function test_get_post_types() {
 		$this->assertEquals(
-			array( 'post', 'page', 'attachment', 'wp_block', 'book', 'event' ),
+			array( 'post', 'page', 'book', 'event' ),
 			array_keys( c2c_QuickDraftsAccess::get_post_types() )
 		);
 	}
