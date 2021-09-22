@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.2.5 _(2021-09-21)_
+## 2.3 _(2021-09-22)_
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
 * Change: Only support public post types, but also exclude 'attachment'
 * Change: Improve and tweak developer documentation and code examples

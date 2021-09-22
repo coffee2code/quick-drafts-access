@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.8
-Stable tag: 2.2.4
+Stable tag: 2.3
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
@@ -72,6 +72,25 @@ Developer documentation can be found in [DEVELOPER-DOCS.md](https://github.com/c
 
 == Changelog ==
 
+= 2.3 (2021-09-22) =
+* New: Add DEVELOPER-DOCS.md and move hooks documentation into it
+* Change: Only support public post types, but also exclude 'attachment'
+* Change: Improve and tweak developer documentation and code examples
+* Change: Note compatibility through WP 5.8+
+* Unit tests:
+    * New: Add `setUp()`, namely to actually register post types
+    * Change: Test support for actual post types
+    * Change: Change `c2c_quick_drafts_access_post_types()` to actual use the post types sent to it
+    * Change: Restructure unit test directories
+        * Change: Move `bin/` into `tests/`
+        * Change: Move `tests/` into `tests/phpunit/`
+        * Change: Move unit test file into `tests/phpunit/tests/`
+    * Change: Remove 'test-' prefix from unit test file
+    * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
+    * Change: In bootstrap, store path to plugin file constant
+    * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
+* New: Add a possible TODO item
+
 = 2.2.4 (2021-03-27) =
 * Fix: Fix plugin name defined in README.md
 * Change: Note compatibility through WP 5.7+
@@ -90,15 +109,13 @@ Details:
 * Change: Update links to coffee2code.com to be HTTPS
 * Change: Unit tests: Remove unnecessary unregistering of hooks and thusly `tearDown()`
 
-= 2.2.2 (2019-12-15) =
-* New: Unit tests: Add test to verify plugin hooks `plugins_loaded` action to initialize itself
-* Change: Note compatibility through WP 5.3+
-* Change: Update copyright date (2020)
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/quick-drafts-access/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.3 =
+Minor update: refined default support to be only for public post types, added DEVELOPER-DOCS.md, noted compatibility through WP 5.8+, and minor reorganization and tweaks to unit tests
 
 = 2.2.4 =
 Trivial update: noted compatibility through WP 5.7+ and updated copyright date (2021)
