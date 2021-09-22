@@ -4,6 +4,14 @@ defined( 'ABSPATH' ) or die();
 
 class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 
+	public function setUp() {
+		parent::setUp();
+
+		register_post_type( 'book',   array( 'public' => true, 'name' => 'Book' ) );
+		register_post_type( 'event',  array( 'public' => true, 'name' => 'Event' ) );
+		register_post_type( 'secret', array( 'public' => false, 'name' => 'Secret' ) );
+	}
+
 	//
 	//
 	// FUNCTIONS FOR HOOKING ACTIONS/FILTERS
@@ -42,7 +50,10 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 	 */
 
 	public function test_get_post_types() {
-		$this->assertEquals( array( 'post', 'page', 'attachment', 'wp_block' ), array_keys( c2c_QuickDraftsAccess::get_post_types() ) );
+		$this->assertEquals(
+			array( 'post', 'page', 'attachment', 'wp_block', 'book', 'event' ),
+			array_keys( c2c_QuickDraftsAccess::get_post_types() )
+		);
 	}
 
 	public function test_get_post_types_returns_array() {

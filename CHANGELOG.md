@@ -1,10 +1,12 @@
 # Changelog
 
-## _(in-progress)_
+## 2.2.5 _(2021-09-21)_
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
 * Change: Improve and tweak developer documentation and code examples
 * Change: Note compatibility through WP 5.8+
 * Unit tests:
+    * New: Add `setUp()`, namely to actually register post types
+    * Change: Test support for actual post types
     * Change: Restructure unit test directories
         * Change: Move `bin/` into `tests/`
         * Change: Move `tests/` into `tests/phpunit/`
