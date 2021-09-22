@@ -17,6 +17,7 @@
     * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
     * Change: In bootstrap, store path to plugin file constant
     * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
+* New: Add a possible TODO item
 
 ## 2.2.4 _(2021-03-27)_
 * Fix: Fix plugin name defined in README.md
