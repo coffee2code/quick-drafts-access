@@ -2,6 +2,11 @@
 
 ## _(in-progress)_
 * Change: Note compatibility through WP 5.8+
+* Unit tests:
+    * Change: Restructure unit test directories
+        * Change: Move `bin/` into `tests/`
+        * Change: Move `tests/` into `tests/phpunit/`
+        * Change: Move unit test file into `tests/phpunit/tests/`
 
 ## 2.2.4 _(2021-03-27)_
 * Fix: Fix plugin name defined in README.md
