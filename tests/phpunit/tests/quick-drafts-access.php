@@ -20,9 +20,7 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 
 
 	public function c2c_quick_drafts_access_post_types( $post_types ) {
-		// Array values would in reality be post type objects, but not necessary as
-		// far as the plugin goes.
-		return array( 'post' => 'post', 'book' => 'book' );
+		return array_intersect_key( $post_types, array( 'post' => true, 'book' => true ) );
 	}
 
 

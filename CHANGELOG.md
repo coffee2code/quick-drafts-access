@@ -7,6 +7,7 @@
 * Unit tests:
     * New: Add `setUp()`, namely to actually register post types
     * Change: Test support for actual post types
+    * Change: Change `c2c_quick_drafts_access_post_types()` to actual use the post types sent to it
     * Change: Restructure unit test directories
         * Change: Move `bin/` into `tests/`
         * Change: Move `tests/` into `tests/phpunit/`
