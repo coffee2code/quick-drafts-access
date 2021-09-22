@@ -75,6 +75,22 @@ class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 		$this->assertEquals( array( 'post', 'book' ), array_keys( c2c_QuickDraftsAccess::get_post_types() ) );
 	}
 
+	public function test_filter_c2c_quick_drafts_access_post_types_dev_docs_example() {
+		add_filter( 'c2c_quick_drafts_access_post_types', function ( $post_types ) {
+			// More post types can be added to this array.
+			$post_types_to_exclude = array( 'event' );
+			foreach ( $post_types_to_exclude as $post_type ) {
+				unset( $post_types[ $post_type ] );
+			}
+			return $post_types;
+		} );
+
+		$this->assertEquals(
+			array( 'post', 'page', 'book' ),
+			array_keys( c2c_QuickDraftsAccess::get_post_types() )
+		);
+	}
+
 	/*
 	 * filter_drafts_by_author()
 	 */

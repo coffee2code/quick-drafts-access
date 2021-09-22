@@ -22,14 +22,12 @@ The `c2c_quick_drafts_access_post_types` filter allows you to customize the list
  * @return array
  */
 function my_qda_mods( $post_types ) {
-    $acceptable_post_types = array();
-    foreach ( (array) $post_types as $post_type ) {
-        // Don't show the Drafts link for 'event' post type
-        if ( ! in_array( $post_type->name, array( 'event' ) ) ) {// More post types can be added to this array
-            $acceptable_post_types[] = $post_type;
-        }
+    // More post types can be added to this array.
+    $post_types_to_exclude = array( 'event' );
+    foreach ( $post_types_to_exclude as $post_type ) {
+        unset( $post_types[ $post_type ] );
     }
-    return $acceptable_post_types;
+    return $post_types;
 }
 add_filter( 'c2c_quick_drafts_access_post_types', 'my_qda_mods' );
 ```
