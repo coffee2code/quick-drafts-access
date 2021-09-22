@@ -2,7 +2,7 @@
 
 ## Hooks
 
-The plugin exposes a number of filters for hooking. Code using these filters should ideally be put into a mu-plugin or site-specific plugin (which is beyond the scope of this readme to explain). Less ideally, you could put them in your active theme's functions.php file.
+The plugin exposes a number of filters for hooking. Code using these filters should ideally be put into a mu-plugin or site-specific plugin (which is beyond the scope of this readme to explain).
 
 ### `c2c_quick_drafts_access_post_types` _(filter)_
 
@@ -10,7 +10,7 @@ The `c2c_quick_drafts_access_post_types` filter allows you to customize the list
 
 #### Arguments:
 
-* **$post_types** _(array)_: Array of post type objects
+* **$post_types** _(array)_: Array of post type objects.
 
 #### Example:
 
@@ -40,8 +40,8 @@ The `c2c_quick_drafts_access_show_all_drafts_menu_link` filter allows you to cus
 
 #### Arguments:
 
-* **$show** _(bool)_: The default boolean indicating if the 'All Drafts' link should be shown at all. Default is truee.
-* **$post_type** _(object)_: The post_type object
+* **$show** _(bool)_: The default boolean indicating if the 'All Drafts' link should be shown at all. Default is true.
+* **$post_type** _(object)_: The post_type object.
 
 #### Example:
 
@@ -56,8 +56,8 @@ The `c2c_quick_drafts_access_show_my_drafts_menu_link` filter allows you to cust
 
 #### Arguments:
 
-* **$show** _(bool)_: The default boolean indicating if the 'My Drafts' link should be shown at all. Default is truee.
-* **$post_type** _(object)_: The post_type object
+* **$show** _(bool)_: The default boolean indicating if the 'My Drafts' link should be shown at all. Default is true.
+* **$post_type** _(object)_: The post_type object.
 
 #### Example:
 
@@ -73,8 +73,8 @@ The `c2c_quick_drafts_access_show_if_empty` filter allows you to customize wheth
 #### Arguments:
 
 * **$show** _(bool)_: The default boolean indicating if the Drafts link should be shown if the post type does not have any drafts. Default is false.
-* **$post_type_name** _(string)_: The post_type name
-* **$post_type** _(object)_: The post_type object
+* **$post_type_name** _(string)_: The post_type name.
+* **$post_type** _(object)_: The post_type object.
 * **$menu_type** _(string)_: The type of draft menu link. Either 'all' for 'All Drafts' or 'my' for 'My Drafts'.
 
 #### Example:
@@ -86,7 +86,7 @@ add_filter( 'c2c_quick_drafts_access_show_if_empty', '__return_true' );
 
 ### `c2c_quick_drafts_access_disable_filter_dropdown` _(filter)_
 
-The `c2c_quick_drafts_access_disable_filter_dropdown` filter allowing for removal of the 'Drafts By' dropdown from drafts post list table.
+The `c2c_quick_drafts_access_disable_filter_dropdown` filter allows for removal of the 'Drafts By' dropdown from drafts post list tables.
 
 #### Arguments:
 
@@ -97,6 +97,6 @@ The `c2c_quick_drafts_access_disable_filter_dropdown` filter allowing for remova
 
 ```php
 // Hide the dropdown filter for draft authors above the admin post listing
-// table in draft views.
+// table in draft views or all post types.
 add_filter( 'c2c_quick_drafts_access_disable_filter_dropdown', '__return_true' );
 ```

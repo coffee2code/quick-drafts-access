@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
+* Change: Improve and tweak developer documentation and code examples
 * Change: Note compatibility through WP 5.8+
 * Unit tests:
     * Change: Restructure unit test directories
