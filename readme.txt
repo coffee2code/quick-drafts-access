@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 6.3
-Stable tag: 2.3
+Stable tag: 2.3.1
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
@@ -72,6 +72,13 @@ Developer documentation can be found in [DEVELOPER-DOCS.md](https://github.com/c
 
 == Changelog ==
 
+= 2.3.1 (2023-04-29) =
+* Change: Note compatibility through WP 6.3+
+* Change: Update copyright date (2023)
+* Fix: Fix typo for link to DEVELOPER-DOCS.md in README.md
+* Fix: Fix typo in readme.txt
+* New: Add a possible TODO item
+
 = 2.3 (2021-09-22) =
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
 * Change: Only support public post types, but also exclude 'attachment'
@@ -96,23 +103,13 @@ Developer documentation can be found in [DEVELOPER-DOCS.md](https://github.com/c
 * Change: Note compatibility through WP 5.7+
 * Change: Update copyright date (2021)
 
-= 2.2.3 (2020-07-12) =
-Highlights:
-
-* This minor release fixes the post type support check to prevent display of dropdown for unsupported post types, adds a TODO.md file, updates a few URLs to be HTTPS, tweaks formatting of output markup, and notes compatibility through WP 5.4+.
-
-Details:
-
-* New: Add TODO.md and move existing TODO list from top of main plugin file into it
-* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
-* Change: Note compatibility through WP 5.4+
-* Change: Update links to coffee2code.com to be HTTPS
-* Change: Unit tests: Remove unnecessary unregistering of hooks and thusly `tearDown()`
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/quick-drafts-access/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.3.1 =
+Trivial update: noted compatibility through WP 6.3+ and updated copyright date (2023)
 
 = 2.3 =
 Minor update: refined default support to be only for public post types, added DEVELOPER-DOCS.md, noted compatibility through WP 5.8+, and minor reorganization and tweaks to unit tests
