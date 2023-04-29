@@ -25,7 +25,7 @@ Also, the draft link(s) only appear for users who have the capability to edit po
 
 The plugin hides the two types of draft links when no related drafts for that post type are present. See the Filters section for how to override this behavior. Filters are also provided to disable the plugin from ever showing the "All Drafts" or the "My Drafts" links.
 
-On plugin admin listings of only draft posts, this plugin also adds a dropdown above the table that allows for the listing to be filtered by the selected draft author. (Only users who actually have a draft post are included in the dropdown.)
+On admin listings of only draft posts, this plugin also adds a dropdown above the table that allows for the listing to be filtered by the selected draft author. (Only users who actually have a draft post are included in the dropdown.)
 
 Links: [Plugin Homepage](https://coffee2code.com/wp-plugins/quick-drafts-access/) | [Plugin Directory Page](https://wordpress.org/plugins/quick-drafts-access/) | [GitHub](https://github.com/coffee2code/quick-drafts-access/) | [Author Homepage](https://coffee2code.com)
 
