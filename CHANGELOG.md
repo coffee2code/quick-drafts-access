@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Change: Update copyright date (2023)
+
 ## 2.3 _(2021-09-22)_
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
 * Change: Only support public post types, but also exclude 'attachment'
