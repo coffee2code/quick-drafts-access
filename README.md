@@ -14,7 +14,7 @@ This plugin is available in the WordPress Plugin Directory: https://wordpress.or
 ## Additional Documentation
 
 * See [readme.txt](https://github.com/coffee2code/quick-drafts-access/blob/master/readme.txt) for additional usage information.
-* See [DEVELOPER-DOCS.md](DEVELOPER_DOCS.md) for developer-related documentation on hooks.
+* See [DEVELOPER-DOCS.md](DEVELOPER-DOCS.md) for developer-related documentation on hooks.
 * See [CHANGELOG.md](CHANGELOG.md) for the list of changes for each release.
 
 

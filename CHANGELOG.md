@@ -3,7 +3,8 @@
 ## _(in-progress)_
 * Change: Note compatibility through WP 6.3+
 * Change: Update copyright date (2023)
-* Change: Fix typo in readme.txt
+* Fix: Fix typo for link to DEVELOPER-DOCS.md in README.md
+* Fix: Fix typo in readme.txt
 * New: Add a possible TODO item
 
 ## 2.3 _(2021-09-22)_
