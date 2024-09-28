@@ -5,7 +5,8 @@
  * @package Quick_Drafts_Access
  */
 
-define( 'QUICK_DRAFTS_ACCESS_PLUGIN_FILE', dirname( __FILE__, 3 ) . '/quick-drafts-access.php' );
+define( 'QUICK_DRAFTS_ACCESS_PLUGIN_DIR',  dirname( __FILE__, 3 ) );
+define( 'QUICK_DRAFTS_ACCESS_PLUGIN_FILE', QUICK_DRAFTS_ACCESS_PLUGIN_DIR . '/quick-drafts-access.php' );
 
 ini_set( 'display_errors', 'on' );
 error_reporting( E_ALL );
