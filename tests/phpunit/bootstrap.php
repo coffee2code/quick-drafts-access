@@ -5,6 +5,9 @@
  * @package Quick_Drafts_Access
  */
 
+// Prevent web access.
+( php_sapi_name() !== 'cli' ) && die();
+
 define( 'QUICK_DRAFTS_ACCESS_PLUGIN_DIR',  dirname( __FILE__, 3 ) );
 define( 'QUICK_DRAFTS_ACCESS_PLUGIN_FILE', QUICK_DRAFTS_ACCESS_PLUGIN_DIR . '/quick-drafts-access.php' );
 
