@@ -215,6 +215,7 @@ class c2c_QuickDraftsAccess {
 						if ( 0 === $num_all_drafts ) {
 							$menu_text = __( 'All Drafts', 'quick-drafts-access' );
 						} else {
+							/* translators: %s: The number of drafts. */
 							$menu_text = sprintf( __( 'All Drafts (%s)', 'quick-drafts-access' ), number_format_i18n( $num_all_drafts ) );
 						}
 
@@ -252,6 +253,7 @@ class c2c_QuickDraftsAccess {
 					if ( 0 === $num_my_drafts ) {
 						$menu_text = __( 'My Drafts', 'quick-drafts-access' );
 					} else {
+						/* translators: %s: The number of drafts. */
 						$menu_text = sprintf( __( 'My Drafts (%s)', 'quick-drafts-access' ), number_format_i18n( $num_my_drafts ) );
 					}
 

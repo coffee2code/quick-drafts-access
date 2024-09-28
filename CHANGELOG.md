@@ -3,6 +3,7 @@
 ## _(in-progress)_
 * Change: Note compatibility through WP 6.6+
 * Change: Update copyright date (2024)
+* Change: Add missing inline comments for translators
 * Change: Remove development and testing-related files from release packaging
 * Change: Reduce number of 'Tags' from `readme.txt`
 * New: Add `.gitignore` file
