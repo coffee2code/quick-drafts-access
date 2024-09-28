@@ -1,7 +1,7 @@
 === Quick Drafts Access ===
 Contributors: coffee2code
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522
-Tags: draft, drafts, admin, menu, multiuser, post, page, post_type, shortcut, coffee2code
+Tags: draft, drafts, admin, menu, shortcut
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
