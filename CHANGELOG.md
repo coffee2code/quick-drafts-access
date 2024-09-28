@@ -4,6 +4,7 @@
 * Change: Note compatibility through WP 6.6+
 * Change: Update copyright date (2024)
 * Change: Reduce number of 'Tags' from `readme.txt`
+* New: Add `.gitignore` file
 
 ## 2.3.1 _(2023-04-29)_
 * Change: Note compatibility through WP 6.3+
