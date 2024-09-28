@@ -58,6 +58,10 @@ Like the Posts and Pages admin tables in WordPress, the default behavior of the 
 
 Yes, which is why the plugin hides the "All Drafts" link when the "My Drafts" link is configured to be displayed (which it is by default) and the user is responsible for all of the drafts for a given post type.
 
+= Does this plugin include unit tests? =
+
+Yes. The tests are not packaged in the release .zip file or included in plugins.svn.wordpress.org, but can be found in the [plugin's GitHub repository](https://github.com/coffee2code/quick-drafts-access/).
+
 
 == Developer Documentation ==
 
