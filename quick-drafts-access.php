@@ -119,7 +119,7 @@ class c2c_QuickDraftsAccess {
 			if ( ! is_object( $post_type ) || ! property_exists( $post_type, 'name' ) ) {
 				_doing_it_wrong(
 					__FUNCTION__,
-					__( 'The "c2c_quick_drafts_access_post_types" filter should be passed an array of post type objects.', 'quick-drafts-access' ),
+					esc_html__( 'The "c2c_quick_drafts_access_post_types" filter should be passed an array of post type objects.', 'quick-drafts-access' ),
 					'2.0'
 				);
 				continue;
@@ -324,9 +324,9 @@ class c2c_QuickDraftsAccess {
 		$curr_draft_author = isset( $_GET['author'] ) ? (int) $_GET['author'] : 0;
 
 		?>
-		<label for="filter-by-draft-author" class="screen-reader-text"><?php _e( 'Filter by author', 'quick-drafts-access' ); ?></label>
+		<label for="filter-by-draft-author" class="screen-reader-text"><?php esc_html_e( 'Filter by author', 'quick-drafts-access' ); ?></label>
 			<select name="author" id="filter-by-draft-author">
-				<option<?php selected( $curr_draft_author, 0 ); ?> value="0"><?php _e( 'All Draft Authors',  'quick-drafts-access' ); ?></option>
+				<option<?php selected( $curr_draft_author, 0 ); ?> value="0"><?php esc_html_e( 'All Draft Authors',  'quick-drafts-access' ); ?></option>
 				<?php
 				foreach ( $users as $author_id => $author ) {
 					if ( 0 == $author_id ) {
@@ -336,7 +336,7 @@ class c2c_QuickDraftsAccess {
 					printf(
 						"<option%s value=\"%d\">%s</option>\n",
 						selected( $curr_draft_author, $author_id, false ),
-						$author_id,
+						intval( $author_id ),
 						esc_html( $author->display_name )
 					);
 				}
