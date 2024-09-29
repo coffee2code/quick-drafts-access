@@ -314,11 +314,11 @@ class c2c_QuickDraftsAccess {
 		}
 
 		// Ensure there are other draft authors to filter on.
-		$draft_authors = wp_cache_get( self::CACHE_KEY_DRAFT_AUTHORS, self::CACHE_KEY_GROUP );
+		$draft_authors = wp_cache_get( self::CACHE_KEY_DRAFT_AUTHORS, self::CACHE_GROUP );
 		if ( ! $draft_authors ) {
 			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- This is the most efficient way to accomplish this, and it is safe.
 			$draft_authors = $wpdb->get_col( "SELECT DISTINCT post_author FROM $wpdb->posts WHERE post_status = 'draft'" );
-			wp_cache_set( self::CACHE_KEY_DRAFT_AUTHORS, $draft_authors, self::CACHE_KEY_GROUP, 60 );
+			wp_cache_set( self::CACHE_KEY_DRAFT_AUTHORS, $draft_authors, self::CACHE_GROUP, 60 );
 		}
 
 		if ( ! $draft_authors ) {
