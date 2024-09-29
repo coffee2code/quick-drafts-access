@@ -15,6 +15,7 @@
     * New: Add `composer.json` for PHPUnit Polyfill dependency
     * Hardening: Prevent direct web access to `bootstrap.php`
     * Change: In bootstrap, store path to plugin directory in a constant
+* New: Add potential TODO item
 
 ## 2.3.1 _(2023-04-29)_
 * Change: Note compatibility through WP 6.3+
