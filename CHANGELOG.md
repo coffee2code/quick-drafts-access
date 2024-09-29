@@ -8,6 +8,7 @@
 * Change: Add missing inline comments for translators
 * Change: Remove development and testing-related files from release packaging
 * Change: Reduce number of 'Tags' from `readme.txt`
+* Change: Prevent unwarranted PHPCS complaints
 * New: Add `.gitignore` file
 * Unit tests:
     * Allow tests to run against current versions of WordPress

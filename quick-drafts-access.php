@@ -291,8 +291,10 @@ class c2c_QuickDraftsAccess {
 		if (
 			'top' !== $which
 		||
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Value is merely checked for existence and only used to bail before outputting anything.
 			! isset( $_GET['post_status'] )
 		||
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Value is merely used for comparison and only used to bail before outputting anything.
 			'draft' !== $_GET['post_status']
 		||
 			/**
@@ -314,6 +316,7 @@ class c2c_QuickDraftsAccess {
 		// Ensure there are other draft authors to filter on.
 		$draft_authors = wp_cache_get( self::CACHE_KEY_DRAFT_AUTHORS, self::CACHE_KEY_GROUP );
 		if ( ! $draft_authors ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- This is the most efficient way to accomplish this, and it is safe.
 			$draft_authors = $wpdb->get_col( "SELECT DISTINCT post_author FROM $wpdb->posts WHERE post_status = 'draft'" );
 			wp_cache_set( self::CACHE_KEY_DRAFT_AUTHORS, $draft_authors, self::CACHE_KEY_GROUP, 60 );
 		}
@@ -329,6 +332,7 @@ class c2c_QuickDraftsAccess {
 		}
 		uasort( $users, function ( $a, $b ) { return strnatcmp( $a->display_name, $b->display_name ); } );
 
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Value is cast to int and only used for comparison.
 		$curr_draft_author = isset( $_GET['author'] ) ? (int) $_GET['author'] : 0;
 
 		?>
