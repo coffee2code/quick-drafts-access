@@ -175,7 +175,7 @@ class c2c_QuickDraftsAccess {
 
 			// Count of all drafts the user has for this post type.
 			if ( $show_my_drafts ) {
-				$num_my_drafts = count( $x = get_posts( array_merge(
+				$num_my_drafts = count( get_posts( array_merge(
 					$query_vars,
 					array(
 						'author'         => get_current_user_id(),
