@@ -45,6 +45,9 @@ if ( ! class_exists( 'c2c_QuickDraftsAccess' ) ) :
 
 class c2c_QuickDraftsAccess {
 
+	const CACHE_KEY_DRAFT_AUTHORS = 'draft_authors';
+	const CACHE_GROUP = 'quick_drafts_access';
+
 	/**
 	 * Returns version of the plugin.
 	 *
@@ -309,7 +312,12 @@ class c2c_QuickDraftsAccess {
 		}
 
 		// Ensure there are other draft authors to filter on.
-		$draft_authors = $wpdb->get_col( "SELECT DISTINCT post_author FROM $wpdb->posts WHERE post_status = 'draft'" );
+		$draft_authors = wp_cache_get( self::CACHE_KEY_DRAFT_AUTHORS, self::CACHE_KEY_GROUP );
+		if ( ! $draft_authors ) {
+			$draft_authors = $wpdb->get_col( "SELECT DISTINCT post_author FROM $wpdb->posts WHERE post_status = 'draft'" );
+			wp_cache_set( self::CACHE_KEY_DRAFT_AUTHORS, $draft_authors, self::CACHE_KEY_GROUP, 60 );
+		}
+
 		if ( ! $draft_authors ) {
 			return;
 		}
