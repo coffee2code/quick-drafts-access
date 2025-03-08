@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die();
 
 class Quick_Drafts_Access_Test extends WP_UnitTestCase {
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		register_post_type( 'book',   array( 'public' => true, 'name' => 'Book' ) );
