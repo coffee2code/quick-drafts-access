@@ -273,8 +273,6 @@ class c2c_QuickDraftsAccess {
 	 * @param string $top       The location of the extra table nav markup.
 	 */
 	public static function filter_drafts_by_author( $post_type, $which ) {
-		global $wpdb;
-
 		if (
 			'top' !== $which
 		||
@@ -301,13 +299,7 @@ class c2c_QuickDraftsAccess {
 		}
 
 		// Ensure there are other draft authors to filter on.
-		$draft_authors = wp_cache_get( self::CACHE_KEY_DRAFT_AUTHORS, self::CACHE_GROUP );
-		if ( ! $draft_authors ) {
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- This is the most efficient way to accomplish this, and it is safe.
-			$draft_authors = $wpdb->get_col( "SELECT DISTINCT post_author FROM $wpdb->posts WHERE post_status = 'draft'" );
-			wp_cache_set( self::CACHE_KEY_DRAFT_AUTHORS, $draft_authors, self::CACHE_GROUP, 60 );
-		}
-
+		$draft_authors = self::get_draft_post_authors();
 		if ( ! $draft_authors ) {
 			return;
 		}
@@ -342,6 +334,27 @@ class c2c_QuickDraftsAccess {
 				?>
 			</select>
 <?php
+	}
+
+	/**
+	 * Returns the IDS of the authors of current draft posts.
+	 *
+	 * @since 2.4
+	 *
+	 * @return int[]
+	 */
+	public static function get_draft_post_authors() {
+		global $wpdb;
+
+		$draft_authors = wp_cache_get( self::CACHE_KEY_DRAFT_AUTHORS, self::CACHE_GROUP );
+
+		if ( ! $draft_authors ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- This is the most efficient way to accomplish this, and it is safe.
+			$draft_authors = $wpdb->get_col( "SELECT DISTINCT post_author FROM $wpdb->posts WHERE post_status = 'draft'" );
+			wp_cache_set( self::CACHE_KEY_DRAFT_AUTHORS, $draft_authors, self::CACHE_GROUP, 60 );
+		}
+
+		return $draft_authors;
 	}
 
 }

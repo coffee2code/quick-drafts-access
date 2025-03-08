@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * New: Cache results of query for draft authors
+* New: Extract logic for getting draft author IDs into new `get_draft_post_authors()`
 * Change: Prevent translations from containing unintended markup
 * Change: Discontinue explicit and unnecessary loading of textdomain
 * Change: Note compatibility through WP 6.8+

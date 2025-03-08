@@ -149,6 +149,47 @@ HTML;
 	}
 
 	/*
+	 * get_draft_post_authors()
+	 */
+
+	public function test_get_draft_post_authors_with_no_draft_authors() {
+		$this->assertEmpty( c2c_QuickDraftsAccess::get_draft_post_authors() );
+	}
+
+	public function test_get_draft_post_authors_with_one_author() {
+		$user_id = $this->factory->user->create( array( 'display_name' => 'Test User' ) );
+		$post_id = $this->factory->post->create( array( 'post_author' => $user_id, 'post_status' => 'draft' ) );
+
+		$this->assertEquals( [ $user_id ], c2c_QuickDraftsAccess::get_draft_post_authors() );
+	}
+
+	public function test_get_draft_post_authors_with_multiple_authors() {
+		$user_ids = $this->factory->user->create_many( 6 );
+		foreach ( $user_ids as $user_id ) {
+			$this->factory->post->create( array( 'post_author' => $user_id, 'post_status' => 'draft' ) );
+		}
+
+		$this->assertEquals( $user_ids, c2c_QuickDraftsAccess::get_draft_post_authors() );
+		return $user_ids;
+	}
+
+	public function test_get_draft_post_authors_sets_cache() {
+		$user_ids = self::test_get_draft_post_authors_with_multiple_authors();
+
+		$this->assertEquals( $user_ids, wp_cache_get( c2c_QuickDraftsAccess::CACHE_KEY_DRAFT_AUTHORS, c2c_QuickDraftsAccess::CACHE_GROUP ) );
+	}
+
+	public function test_get_draft_post_authors_uses_cache() {
+		$user_ids = self::test_get_draft_post_authors_with_multiple_authors();
+		// Override the cache so it has different IDs.
+		$override_user_ids = [ 1000, 1001, 1002 ];
+
+		wp_cache_set( c2c_QuickDraftsAccess::CACHE_KEY_DRAFT_AUTHORS, $override_user_ids, c2c_QuickDraftsAccess::CACHE_GROUP );
+
+		$this->assertEquals( $override_user_ids, wp_cache_get( c2c_QuickDraftsAccess::CACHE_KEY_DRAFT_AUTHORS, c2c_QuickDraftsAccess::CACHE_GROUP ) );
+	}
+
+	/*
 	 * Hooks
 	 */
 
