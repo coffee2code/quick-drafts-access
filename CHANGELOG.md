@@ -3,6 +3,7 @@
 ## _(in-progress)_
 * New: Cache results of query for draft authors
 * Change: Prevent translations from containing unintended markup
+* Change: Discontinue explicit and unnecessary loading of textdomain
 * Change: Note compatibility through WP 6.8+
 * Change: Update copyright date (2025)
 * Change: Add missing inline comments for translators

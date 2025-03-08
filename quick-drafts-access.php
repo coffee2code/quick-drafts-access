@@ -64,25 +64,12 @@ class c2c_QuickDraftsAccess {
 	 */
 	public static function init() {
 
-		// Hook the admin init to load textdomain.
-		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
-
 		// Hook the admin menu to add links to drafts.
 		add_action( 'admin_menu', array( __CLASS__, 'quick_drafts_access' ) );
 
 		// Hook the post table actions to add dropdown to filter for draft author.
 		add_action( 'restrict_manage_posts', array( __CLASS__, 'filter_drafts_by_author' ), 10, 2 );
 
-	}
-
-	/**
-	 * Adds hooks associated with the admin_init action.
-	 *
-	 * @since 2.0.1
-	 */
-	public static function admin_init() {
-		// Load textdomain.
-		load_plugin_textdomain( 'quick-drafts-access' );
 	}
 
 	/**

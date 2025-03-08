@@ -152,10 +152,6 @@ HTML;
 	 * Hooks
 	 */
 
-	public function test_hooks_action_admin_init() {
-		$this->assertEquals( 10, has_action( 'admin_init', array( 'c2c_QuickDraftsAccess', 'admin_init' ) ) );
-	}
-
 	public function test_hooks_action_admin_menu() {
 		$this->assertEquals( 10, has_action( 'admin_menu', array( 'c2c_QuickDraftsAccess', 'quick_drafts_access' ) ) );
 	}
