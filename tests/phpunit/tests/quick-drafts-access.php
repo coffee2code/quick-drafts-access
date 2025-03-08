@@ -190,6 +190,40 @@ HTML;
 	}
 
 	/*
+	 * transition_post_status()
+	 */
+
+	public function test_transition_post_status_noops_if_not_draft_transition() {
+		$post = $this->factory->post->create_and_get( array( 'post_status' => 'publish' ) );
+		$override_user_ids = [ 1000, 1001, 1002 ];
+		wp_cache_set( c2c_QuickDraftsAccess::CACHE_KEY_DRAFT_AUTHORS, $override_user_ids, c2c_QuickDraftsAccess::CACHE_GROUP );
+
+		c2c_QuickDraftsAccess::transition_post_status( 'publish', $post->post_status, $post );
+
+		$this->assertEquals( $override_user_ids, wp_cache_get( c2c_QuickDraftsAccess::CACHE_KEY_DRAFT_AUTHORS, c2c_QuickDraftsAccess::CACHE_GROUP ) );
+	}
+
+	public function test_transition_post_status_invalidates_cache_when_post_becomes_draft() {
+		$post = $this->factory->post->create_and_get( array( 'post_status' => 'publish' ) );
+		$override_user_ids = [ 1000, 1001, 1002 ];
+		wp_cache_set( c2c_QuickDraftsAccess::CACHE_KEY_DRAFT_AUTHORS, $override_user_ids, c2c_QuickDraftsAccess::CACHE_GROUP );
+
+		c2c_QuickDraftsAccess::transition_post_status( 'draft', $post->post_status, $post );
+
+		$this->assertFalse( wp_cache_get( c2c_QuickDraftsAccess::CACHE_KEY_DRAFT_AUTHORS, c2c_QuickDraftsAccess::CACHE_GROUP ) );
+	}
+
+	public function test_transition_post_status_invalidates_cache_when_post_leaves_draft() {
+		$post = $this->factory->post->create_and_get( array( 'post_status' => 'draft' ) );
+		$override_user_ids = [ 1000, 1001, 1002 ];
+		wp_cache_set( c2c_QuickDraftsAccess::CACHE_KEY_DRAFT_AUTHORS, $override_user_ids, c2c_QuickDraftsAccess::CACHE_GROUP );
+
+		c2c_QuickDraftsAccess::transition_post_status( 'publish', $post->post_status, $post );
+
+		$this->assertFalse( wp_cache_get( c2c_QuickDraftsAccess::CACHE_KEY_DRAFT_AUTHORS, c2c_QuickDraftsAccess::CACHE_GROUP ) );
+	}
+
+	/*
 	 * Hooks
 	 */
 
@@ -199,6 +233,10 @@ HTML;
 
 	public function test_hooks_action_restrict_manage_posts() {
 		$this->assertEquals( 10, has_action( 'restrict_manage_posts', array( 'c2c_QuickDraftsAccess', 'filter_drafts_by_author' ) ) );
+	}
+
+	public function test_hooks_action_transition_post_status() {
+		$this->assertEquals( 10, has_action( 'transition_post_status', array( 'c2c_QuickDraftsAccess', 'transition_post_status' ) ) );
 	}
 
 }

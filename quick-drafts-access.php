@@ -70,6 +70,9 @@ class c2c_QuickDraftsAccess {
 		// Hook the post table actions to add dropdown to filter for draft author.
 		add_action( 'restrict_manage_posts', array( __CLASS__, 'filter_drafts_by_author' ), 10, 2 );
 
+		// Hook post status transitions to potentially invalidate the cache.
+		add_action( 'transition_post_status', array( __CLASS__, 'transition_post_status' ), 10, 3 );
+
 	}
 
 	/**
@@ -355,6 +358,30 @@ class c2c_QuickDraftsAccess {
 		}
 
 		return $draft_authors;
+	}
+
+	/**
+	 * Invalidates the cached list of draft authors if a post changes status to/from draft.
+	 *
+	 * @since 2.4
+	 *
+	 * @param string  $new_status New post status.
+	 * @param string  $old_status Old post status.
+	 * @param WP_Post $post       Post object.
+	 */
+	public static function transition_post_status( $new_status, $old_status, $post ) {
+		// Bail if no change in post status.
+		if ( $new_status === $old_status ) {
+			return;
+		}
+
+		// Bail if neither status is a draft.
+		if ( 'draft' !== $old_status && 'draft' !== $new_status ) {
+			return;
+		}
+
+		// Invalidate the cache.
+		wp_cache_delete( self::CACHE_KEY_DRAFT_AUTHORS, self::CACHE_GROUP );
 	}
 
 }

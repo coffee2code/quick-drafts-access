@@ -10,6 +10,5 @@ The following list comprises ideas, suggestions, and known issues, all of which 
 * Add a screen options setting to (globally) disable draft links for the given post type. By default, they aren't disabled, which represents plugin's default behavior. This could (should?) be a per-user setting instead, which is really what screen options are otherwise for.
 * When a quick edit or bulk edit happens, potentially refresh the drafts count(s).
   * May require an authenticated API endpoint.
-* Invalidate cache when a post becomes a draft or is no longer a draft. Can also extend cache time to be much longer.
 
 Feel free to make your own suggestions or champion for something already on the list (via the [plugin's support forum on WordPress.org](https://wordpress.org/support/plugin/quick-drafts-access/) or on [GitHub](https://github.com/coffee2code/quick-drafts-access/) as an issue or PR).
