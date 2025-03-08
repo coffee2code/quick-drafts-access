@@ -4,7 +4,7 @@
 * New: Cache results of query for draft authors
 * Change: Prevent translations from containing unintended markup
 * Change: Note compatibility through WP 6.6+
-* Change: Update copyright date (2024)
+* Change: Update copyright date (2025)
 * Change: Add missing inline comments for translators
 * Change: Remove development and testing-related files from release packaging
 * Change: Reduce number of 'Tags' from `readme.txt`
