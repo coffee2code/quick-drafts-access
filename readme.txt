@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 6.8
-Stable tag: 2.3.1
+Stable tag: 2.4
 
 Adds links to 'All Drafts' and 'My Drafts' under Posts, Pages, and other custom post type sections in the admin menu.
 
@@ -76,6 +76,32 @@ Developer documentation can be found in [DEVELOPER-DOCS.md](https://github.com/c
 
 == Changelog ==
 
+= 2.4 (2025-03-08) =
+Highlights:
+
+This minor release prevents translations from containing unintended markup, adds caching, notes compatibility through WP 6.8+ and PHP 8.3+, improves unit testing while also removing unit tests from release packaging, and updates copyright date (2025).
+
+Details:
+
+* New: Cache results of query for draft authors
+* New: Extract logic for getting draft author IDs into new `get_draft_post_authors()`
+* Change: Prevent translations from containing unintended markup
+* Change: Discontinue explicit and unnecessary loading of textdomain
+* Change: Note compatibility through WP 6.8+
+* Change: Note compatibility through PHP 8.3+
+* Change: Update copyright date (2025)
+* Change: Add missing inline comments for translators
+* Change: Remove development and testing-related files from release packaging
+* Change: Reduce number of 'Tags' from `readme.txt`
+* Change: Prevent unwarranted PHPCS complaints
+* New: Add `.gitignore` file
+* Unit tests:
+    * Allow tests to run against current versions of WordPress
+    * New: Add `composer.json` for PHPUnit Polyfill dependency
+    * Change: Explicitly define return type for overridden method
+    * Hardening: Prevent direct web access to `bootstrap.php`
+    * Change: In bootstrap, store path to plugin directory in a constant
+
 = 2.3.1 (2023-04-29) =
 * Change: Note compatibility through WP 6.3+
 * Change: Update copyright date (2023)
@@ -102,15 +128,13 @@ Developer documentation can be found in [DEVELOPER-DOCS.md](https://github.com/c
     * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
 * New: Add a possible TODO item
 
-= 2.2.4 (2021-03-27) =
-* Fix: Fix plugin name defined in README.md
-* Change: Note compatibility through WP 5.7+
-* Change: Update copyright date (2021)
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/quick-drafts-access/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.4 =
+Minor update: prevented translations from containing unintended markup, added caching, noted compatibility through WP 6.6+ and PHP 8.3+, improved unit testing while also removing unit tests from release packaging, and updated copyright date (2024)
 
 = 2.3.1 =
 Trivial update: noted compatibility through WP 6.3+ and updated copyright date (2023)

@@ -1,6 +1,13 @@
 # Changelog
 
-## _(in-progress)_
+## 2.4 _(2025-03-08)_
+
+### Highlights:
+
+This minor release prevents translations from containing unintended markup, adds caching, notes compatibility through WP 6.8+ and PHP 8.3+, improves unit testing while also removing unit tests from release packaging, and updates copyright date (2025).
+
+### Details:
+
 * New: Cache results of query for draft authors
 * New: Extract logic for getting draft author IDs into new `get_draft_post_authors()`
 * Change: Prevent translations from containing unintended markup
